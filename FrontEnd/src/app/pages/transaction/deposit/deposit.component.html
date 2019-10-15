@@ -1,0 +1,42 @@
+<div class="col-12 warper">
+    <div class="row">
+        <div class="col-12 title">
+            <div class="row">
+                <div class="col-6">
+                    <h2>DEPOSIT</h2>
+                </div>
+                <div class="col-6  d-none d-md-block  navigation-right">
+                    <h6>Transection / Deposit</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 body">
+            <div class="row">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="buttons-row">
+                            <button nbButton status="success" (click)="onAddDeposit()">
+                                Add DEPOSIT
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <nb-card>
+                            <nb-card-header>
+                                List Deposit
+                            </nb-card-header>
+
+                            <nb-card-body>
+                                <ng2-smart-table [settings]="settings" [source]="source">
+                                </ng2-smart-table>
+                            </nb-card-body>
+                        </nb-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

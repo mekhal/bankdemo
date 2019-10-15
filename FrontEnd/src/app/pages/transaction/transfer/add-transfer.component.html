@@ -1,0 +1,60 @@
+<div class="col-12 warper">
+        <div class="row">
+            <div class="col-12 title">
+                <div class="row">
+                    <div class="col-6">
+                        <h2>ADD TRANSFER</h2>
+                    </div>
+                    <div class="col-6  d-none d-md-block  navigation-right">
+                        <h6>Transection / Add Transfer</h6>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 body">
+                <div class="col-12">
+                    <div class="buttons-row addmarginbot">
+                        <button nbButton status="success" (click)="onBack()">
+                            Back
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                        <form #nf="ngForm" (ngSubmit)="Save(nf)">
+                            <nb-card>
+                                <nb-card-header>Deposit</nb-card-header>
+                                <nb-card-body>
+                                    <div class="row">
+                                        <div class="col-4">
+                                                Transfer Account:
+                                        </div>
+                                        <div class="addmarginbot col-8">
+                                            <nb-select [(ngModel)]="customerFromID" name="ddlFromCustomer" *ngIf="customerData" fullWidth ngModel>
+                                                <nb-option *ngFor="let customer of customerData.data" value="{{customer.id}}">{{customer.ibanNumber +" | "+customer.firstName +"  "+customer.lastName}}</nb-option>
+                                            </nb-select>
+                                        </div>
+                                        <div class="col-4">
+                                                Received Account:
+                                            </div>
+                                            <div class="addmarginbot col-8">
+                                                <nb-select [(ngModel)]="customerToID" name="ddlToCustomer" *ngIf="customerData" fullWidth ngModel>
+                                                    <nb-option *ngFor="let customer of customerData.data" value="{{customer.id}}">{{customer.ibanNumber +" | "+customer.firstName +"  "+customer.lastName}}</nb-option>
+                                                </nb-select>
+                                            </div>
+                                        <div class="col-4">
+                                            Amount:
+                                        </div>
+                                        <div class="addmarginbot col-8">
+                                            <input required type="text" nbInput fullWidth  name="txtAmount" placeholder="Amount" ngModel maxlength="8" pattern="/^[0-9]{1,10}$/">
+                                        </div>
+                                        <div class="col-12">
+                                            <button type="submit"  [disabled]="isSave" nbButton>Submit</button>
+                                        </div>
+                                    </div>
+                                </nb-card-body>
+                            </nb-card>
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>

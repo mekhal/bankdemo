@@ -1,0 +1,91 @@
+<div class="col-12 warper">
+    <div class="row">
+        <div class="col-12 title">
+            <div class="row">
+                <div class="col-6">
+                    <h2>Add USER</h2>
+                </div>
+                <div class="col-6  d-none d-md-block  navigation-right">
+                    <h6>Access Control / Add User</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 body">
+            <div class="row">
+                        <div class="col-12">
+                            <div class="buttons-row">
+                                <button nbButton status="success" (click)="onBack()">
+                                    Back
+                                </button>
+                            </div>
+                        </div>
+                            <div class="col-md-6">
+                                <form #nf="ngForm" (ngSubmit)="save(nf)">
+                                <nb-card>
+                                    <nb-card-header>
+                                        Create accounts for customers
+                                    </nb-card-header>
+                                    <nb-card-body>
+                                        <div class="row">
+                                            <div class="col-12 input-group mb-3">
+                                                <label for="inputIBANNumber" class="label row col-12">IBAN Number</label>
+                                                <input type="text" class="form-control" readonly="readonly" nbInput placeholder="IBAN Number" aria-label="IBAN Number" id="inputIBANNumber" name="inputIBANNumber"  [(ngModel)]="inputIBANNumber" ngModel>
+                                                <div class="input-group-append">
+                                                    <button nbButton status="info" type="button" id="gen_IBAN_number" (click)="RandomIBAN()">Generate IBAN</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="inputFirstName" class="label">First Name</label>
+                                                    <input required maxlength="40" type="text" nbInput fullWidth id="inputFirstName" name="inputFirstName"
+                                                        placeholder="First Name" ngModel>
+                                                    <!-- <div *ngIf="nf.controls.inputFirstName.invalid  && (nf.controls.inputFirstName.dirty || nf.controls.inputFirstName.touched)"
+                                                        class="alert alert-danger">
+                                                      <div *ngIf="nf.controls.inputFirstName.errors.required">
+                                                            FirstName is required.
+                                                      </div>
+                                                    </div> -->
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="inputLastName" class="label">Last Name</label>
+                                                    <input required maxlength="40" type="text" nbInput fullWidth id="inputLastName" name="inputLastName" placeholder="Last Name" ngModel>
+                                                    <!-- <div *ngIf="nf.controls.inputLastName.errors.required"
+                                                        class="alert alert-danger">
+                                                      <div *ngIf="nf.controls.inputLastName.errors.required  && (nf.controls.inputLastName.dirty || nf.controls.inputLastName.touched)">
+                                                            LastName is required.
+                                                      </div>
+                                                    </div> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="inputEmail" class="label">Email</label>
+                                                    <input required  maxlength="80" type="email" nbInput fullWidth id="inputEmail" name="inputEmail" placeholder="Email" ngModel pattern="^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$">
+                                                    <!-- <div *ngIf="nf.controls.inputEmail.errors"
+                                                        class="alert alert-danger">
+                                                        <div *ngIf="(nf.controls.inputEmail.errors.required || nf.controls.inputEmail.errors.pattern ) && (nf.controls.inputEmail.dirty || nf.controls.inputEmail.touched)">
+                                                        Email is required.
+                                                        </div>
+                                                        <div *ngIf="nf.controls.inputEmail.errors.pattern">
+                                                            Error Email Pattern.
+                                                        </div>
+                                                    </div> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="submit" [disabled]="isSave" nbButton>Submit</button>
+                                    </nb-card-body>
+                                </nb-card>
+                            </form>
+                        </div>
+                
+            </div>
+        </div>
+
+    </div>
+</div>
